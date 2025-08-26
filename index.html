@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CHIT-CHAT BOX</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Top Logo Header -->
+    <div id="toppingheader">
+      <h1>CHIT-CHAT BOX</h1>
+    </div>
+
+    <!-- Login/Signup -->
+    <div id="auth" class="auth-container">
+      <h2 id="authTitle">Login</h2>
+      <input type="text" id="authUsername" placeholder="Username" required />
+      <input type="text" id="authFullname" placeholder="Full Name (Signup only)" class="hidden"/>
+      <input type="password" id="authPassword" placeholder="Password" required />
+      <button onclick="handleAuth()">Login</button>
+      <p><span id="toggleAuth">Don't have an account? Signup</span></p>
+      <p id="authMsg" style="color: red; text-align: center"></p>
+    </div>
+
+    <!-- Chat UI -->
+    <div id="chatApp" class="chat-container hidden">
+      <div class="chat-contacts">
+        <input type="text" id="chatSearchInput" placeholder="Search contacts..."/>
+        <div id="chatContacts" class="chat-contacts-list"></div>
+      </div>
+
+      <div class="chat-main">
+        <div class="chat-header">
+          <div id="contactAvatar" class="contact-avatar">--</div>
+          <div style="flex: 1">
+            <div id="contactName">Select a contact</div>
+            <small id="contactStatus">Click a contact to start chatting</small>
+          </div>
+          <div>
+            <button onclick="logout()" class="btn-logout">Logout</button>
+            <button onclick="deleteAccount()" class="btn-delete">Delete</button>
+          </div>
+        </div>
+        <div id="chatMessages" class="chat-messages"></div>
+        <form id="chatForm" class="chat-footer">
+          <input type="text" id="chatInput" placeholder="Type a message..." disabled/>
+          <button type="submit" disabled>Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
